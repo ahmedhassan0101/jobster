@@ -1,0 +1,34 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    // Target modern browsers — Vite handles the rest
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    // Strict mode — required per project spec
+    "strict": true,
+    // Catches missing return types, implicit any from indexing
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Module resolution
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+
+    // JSX
+    "jsx": "react-jsx",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
