@@ -6,7 +6,7 @@ A job application tracking dashboard. Built with React, TypeScript, and Redux To
 
 ## Live Demo
 
-[jobster.vercel.app](https://jobster.vercel.app)
+[jobster.vercel.app](jobster-khaki.vercel.app)
 
 ```
 Email:    testUser@test.com
