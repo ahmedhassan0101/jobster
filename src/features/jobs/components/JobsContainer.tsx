@@ -1,86 +1,3 @@
-// // src/features/jobs/components/JobsContainer.tsx
-// import { useEffect } from 'react';
-// import styled from 'styled-components';
-// import Job from './Job';
-// import Loading from '@/shared/components/Loading';
-// import PageBtnContainer from '@/shared/components/PageBtnContainer';
-// import { useAppSelector, useAppDispatch } from '@/shared/hooks/redux';
-// import { getAllJobs } from '@/store/allJobs/allJobsSlice';
-
-// const JobsWrapper = styled.section`
-//   margin-top: 2rem;
-
-//   .results-header {
-//     font-size: 0.9375rem;
-//     font-weight: 500;
-//     color: ${({ theme }) => theme.colors.grey[600]};
-//     margin-bottom: 1.25rem;
-
-//     span { color: ${({ theme }) => theme.colors.primary[600]}; font-weight: 600; }
-//   }
-
-//   .empty-state {
-//     text-align: center;
-//     padding: 4rem 2rem;
-//     color: ${({ theme }) => theme.colors.grey[400]};
-
-//     h4 {
-//       font-size: 1.125rem;
-//       margin-bottom: 0.5rem;
-//       color: ${({ theme }) => theme.colors.grey[500]};
-//     }
-
-//     p { font-size: 0.9375rem; }
-//   }
-
-//   .jobs-grid {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     gap: 1.25rem;
-
-//     @media (min-width: 992px) {
-//       grid-template-columns: 1fr 1fr;
-//     }
-//   }
-// `;
-
-// const JobsContainer = () => {
-//   const dispatch = useAppDispatch();
-//   const {
-//     jobs, isLoading, page, totalJobs, numOfPages,
-//     search, searchStatus, searchType, sort,
-//   } = useAppSelector((state) => state.allJobs);
-
-//   useEffect(() => {
-//     dispatch(getAllJobs());
-//   }, [dispatch, page, search, searchStatus, searchType, sort]);
-
-//   if (isLoading) return <Loading center />;
-
-//   return (
-//     <JobsWrapper>
-//       {jobs.length === 0 ? (
-//         <div className="empty-state">
-//           <h4>No jobs found</h4>
-//           <p>Try adjusting your search or filters.</p>
-//         </div>
-//       ) : (
-//         <>
-//           <p className="results-header">
-//             <span>{totalJobs}</span> job{totalJobs !== 1 ? 's' : ''} found
-//           </p>
-//           <div className="jobs-grid">
-//             {jobs.map((job) => <Job key={job._id} {...job} />)}
-//           </div>
-//           {numOfPages > 1 && <PageBtnContainer />}
-//         </>
-//       )}
-//     </JobsWrapper>
-//   );
-// };
-
-// export default JobsContainer;
-
 // src/features/jobs/components/JobsContainer.tsx
 import { useEffect } from "react";
 import styled from "styled-components";
@@ -166,7 +83,7 @@ const JobsContainer = () => {
 
   return (
     <JobsWrapper>
-      {true  ? (
+      {!jobs.length  ? (
         <div className="empty-state">
           <h4>No jobs found</h4>
           <p>Try adjusting your search or filters.</p>
